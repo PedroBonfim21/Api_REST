@@ -33,15 +33,7 @@ class UserController {
 
   async update(req, res) {
     try {
-      const { id } = req.params;
-
-      if (!id) {
-        return res.status(400).json({
-          errors: ['Missing ID'],
-        });
-      }
-
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(req.userId);
 
       if (!user) {
         return res.status(400).json({
@@ -60,15 +52,7 @@ class UserController {
 
   async delete(req, res) {
     try {
-      const { id } = req.params;
-
-      if (!id) {
-        return res.status(400).json({
-          errors: ['Missing ID'],
-        });
-      }
-
-      const user = await User.findByPk(id);
+      const user = await User.findByPk(req.userId);
 
       if (!user) {
         return res.status(400).json({
