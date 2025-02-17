@@ -18,6 +18,7 @@ class UserController {
       const users = await User.findAll();
       return res.json(users);
     } catch (e) {
+      console.log(e);
       return res.json(null);
     }
   }

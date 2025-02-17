@@ -4,7 +4,7 @@ import loginRequired from '../middlewares/loginRequired';
 
 const router = new Router();
 
-router.get('/', loginRequired, userController.index); // fins de aprendizdo (apagar dps)
+router.get('/', userController.index); // fins de aprendizdo (apagar dps)
 
 router.post('/', userController.create);
 router.put('/', loginRequired, userController.update);
