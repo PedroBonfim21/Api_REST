@@ -19,7 +19,13 @@ class StudentController {
 
   async show(req, res) {
     try {
-      const student = await Student.findByPk(req.params.id);
+      const { id } = req.params;
+      if (!id) {
+        return res.status(400).json({
+          errors: ['Missing ID'],
+        });
+      }
+      const student = await Student.findByPk(id);
 
       if (!student) {
         return res.status(400).json({
@@ -36,6 +42,12 @@ class StudentController {
 
   async update(req, res) {
     try {
+      const { id } = req.params;
+      if (!id) {
+        return res.status(400).json({
+          errors: ['Missing ID'],
+        });
+      }
       const student = await Student.findByPk(req.params.id);
 
       if (!student) {
@@ -55,6 +67,12 @@ class StudentController {
 
   async delete(req, res) {
     try {
+      const { id } = req.params;
+      if (!id) {
+        return res.status(400).json({
+          errors: ['Missing ID'],
+        });
+      }
       const student = await Student.findByPk(req.params.id);
 
       if (!student) {
