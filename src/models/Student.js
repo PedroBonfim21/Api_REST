@@ -39,6 +39,9 @@ export default class Student extends Model {
         type: Sequelize.INTEGER,
         defaultValue: '',
         validate: {
+          isInt: {
+            msg: 'Idade precisa ser um numero inteiro',
+          },
           min: {
             args: [5],
             msg: 'Idade tem que ser maior que 5 anos',

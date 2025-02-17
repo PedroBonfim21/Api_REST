@@ -17,6 +17,23 @@ class StudentController {
     }
   }
 
+  async show(req, res) {
+    try {
+      const student = await Student.findByPk(req.params.id);
+
+      if (!student) {
+        return res.status(400).json({
+          errors: ['Student does not exist'],
+        });
+      }
+      return res.json(student);
+    } catch (e) {
+      return res.status(400).json({
+        errors: e.errors.map((err) => err.message),
+      });
+    }
+  }
+
   async update(req, res) {
     try {
       const student = await Student.findByPk(req.params.id);
