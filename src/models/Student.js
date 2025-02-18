@@ -9,7 +9,7 @@ export default class Student extends Model {
         validate: {
           len: {
             args: [4, 30],
-            msg: 'Campo nome deve ter entre 4 e 30 caracteres',
+            msg: 'Name field must be between 4 and 30 characters',
           },
         },
       },
@@ -19,7 +19,7 @@ export default class Student extends Model {
         validate: {
           len: {
             args: [4, 30],
-            msg: 'Campo sobrenome deve ter entre 4 e 30 caracteres',
+            msg: 'Surname field must have between 4 and 30 characters',
           },
         },
       },
@@ -27,11 +27,11 @@ export default class Student extends Model {
         type: Sequelize.STRING,
         defaultValue: '',
         unique: {
-          msg: 'Email ja existe',
+          msg: 'Email already exists',
         },
         validate: {
           isEmail: {
-            msg: 'Email invalido',
+            msg: 'Invalid email',
           },
         },
       },
@@ -40,15 +40,15 @@ export default class Student extends Model {
         defaultValue: '',
         validate: {
           isInt: {
-            msg: 'Idade precisa ser um numero inteiro',
+            msg: 'Age must be a whole number',
           },
           min: {
             args: [5],
-            msg: 'Idade tem que ser maior que 5 anos',
+            msg: 'Age must be greater than 5 years',
           },
           max: {
             args: [18],
-            msg: 'A idade deve ser menor ou igual a 18',
+            msg: 'Age must be less than or equal to 18',
           },
         },
       },
@@ -57,15 +57,15 @@ export default class Student extends Model {
         allowNull: false,
         validate: {
           isFloat: {
-            msg: 'O peso deve ser um número válido',
+            msg: 'Weight must be a valid number',
           },
           min: {
             args: [1],
-            msg: 'O peso deve ser maior que 0',
+            msg: 'Weight must be greater than 0Kg',
           },
           max: {
             args: [300],
-            msg: 'O peso deve ser menor que 300kg',
+            msg: 'Weight must be less than 300Kg',
           },
         },
       },
@@ -73,16 +73,16 @@ export default class Student extends Model {
         type: Sequelize.FLOAT,
         allowNull: false,
         isFloat: {
-          msg: 'O peso deve ser um número válido',
+          msg: 'Height must be a valid number',
         },
         validate: {
           min: {
             args: [0.5],
-            msg: 'A altura deve ser maior que 0.5m',
+            msg: 'Height must be greater than 0.5M',
           },
           max: {
             args: [3],
-            msg: 'A altura deve ser menor que 3m',
+            msg: 'Height must be less than 3M',
           },
         },
       },

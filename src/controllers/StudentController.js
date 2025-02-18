@@ -98,7 +98,7 @@ class StudentController {
 
       await student.destroy();
       return res.json({
-        msg: 'Student deletado da BD',
+        msg: 'Student deleted from BD',
       });
     } catch (e) {
       return res.status(400).json({

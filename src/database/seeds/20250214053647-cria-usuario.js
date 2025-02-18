@@ -13,27 +13,6 @@ module.exports = {
           created_at: new Date(),
           updated_at: new Date(),
         },
-        {
-          name: 'Teste2',
-          email: 'Teste2@teste.com',
-          password_hash: await bcryptjs.hash('654321', 8),
-          created_at: new Date(),
-          updated_at: new Date(),
-        },
-        {
-          name: 'Teste3',
-          email: 'Teste3@teste.com',
-          password_hash: await bcryptjs.hash('12345689', 8),
-          created_at: new Date(),
-          updated_at: new Date(),
-        },
-        {
-          name: 'TesteDelete',
-          email: 'TesteDelete@teste.com',
-          password_hash: await bcryptjs.hash('12345689', 8),
-          created_at: new Date(),
-          updated_at: new Date(),
-        },
       ],
       {},
     );

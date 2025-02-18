@@ -55,7 +55,7 @@ class UserController {
 
       await user.destroy();
       return res.json({
-        msg: 'Usuario deletado da BD',
+        msg: 'User deleted from BD',
       });
     } catch (e) {
       return res.status(400).json({

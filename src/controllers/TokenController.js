@@ -7,7 +7,7 @@ class TokenController {
 
     if (!email || !password) {
       return res.status(401).json({
-        errors: ['Credenciais invalidas'],
+        errors: ['Invalid credentials'],
       });
     }
 
